@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cart Quantity 1</title>
+        <style>
+
+        </style>
+    </head>
+
+    <body>
+        
+     <p>Cart quantity project</p>
+     <button onclick="
+        console.log(`The cart quantity is : ${cartQuantity}`);
+     ">
+        Show cart Quantity
+     </button>
+
+     <button onclick="
+        cartQuantity++;
+     ">
+        Add to cart
+     </button>
+
+     <button onclick="
+        cartQuantity += 2;
+     ">
+        +2
+     </button>
+
+     <button onclick="
+        cartQuantity += 3;
+     ">
+        +3
+     </button>
+
+     <button onclick="
+        cartQuantity += 4;
+     ">
+        +4
+     </button>
+
+     <button onclick="
+        cartQuantity--;
+     ">
+        remove from cart
+     </button>
+
+     <button onclick="
+        cartQuantity -= 2;
+     ">
+        -2
+     </button>
+
+     <button onclick="
+         cartQuantity -= 3;
+     ">
+        -3
+     </button>
+
+       <button onclick="
+         cartQuantity = 0;
+       ">
+           Reset Cart
+       </button>
+        <script>
+      let cartQuantity = 0;
+        </script>
+    </body>
+</html>
