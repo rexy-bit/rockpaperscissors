@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<title>Reprise</title>
+<style>
+    .button1{
+      background-color: rgba(255, 255, 0, 0.824);
+      color : black;
+      font-size : 16px;
+      font-weight : 200px;
+      padding : 15px;
+      border : none;
+      border-radius : 20px;
+      margin-right : 20px;
+      cursor:pointer;
+    }
+  
+    .button2{
+        background-color : orange;
+        color : black;
+        font-size : 1.1em;
+        font-weight : 200px;
+        padding : 15px;
+        border : none;
+        border-radius : 20px;
+        cursor : pointer;
+
+    }
+    .button1:hover,
+    .button2:hover{
+        opacity : 0.7;
+    }
+
+    .button1:active
+    .button2:active{
+        opacity : 0.3;
+    }
+
+
+</style>
+
+<body>
+   <p>Adults Plain cutton t-shirts</p>
+   <p>Toatl price : $7.99</p>
+    <button class="button1" onclick="
+       alert(`Added Succefully`)
+    ">
+        Add to cart
+    </button>
+
+    <button class="button2" onclick="
+       console.log('Loading..');
+       alert(`Purshased`);
+    ">
+        Buy Now
+    </button>
+
+
+    
+
+    <script>
+        /*
+       let num1 = 2, num2 = 4;
+       let result = num1 + num2;
+       console.log(result);
+  
+
+  console.log(3+4);
+  console.log('2' + '2');
+  console.log(2-2+1);
+  console.log(2*2);
+ 
+
+  let order1 = 20;
+  let order2 = 8;
+  let order3 = 13;
+  let total = order1 + order2 + order3;
+
+  console.log(total);
+  console.log(100 - (20 + 50) + 200);
+  document.body.innerHTML = '';
+
+
+console.log(18.99 + 7.99 + 20.95);
+console.log(18.99 + 7.99 + 20.95);
+console.log((18.99 + 7.99 + 20.95)*0.1);
+console.log(Math.round(18.99 + 7.99 + 20.95 + (18.99 + 7.99 + 20.95)*0.1));
+
+
+  let celsius = 25;
+  let ferenheit = 86;
+
+  console.log((celsius*9/5) + 32);
+  console.log((ferenheit - 32)*5/9);
+  console.log((-5 - 32)*5/9);
+
+  
+   console.log('My' + 'name' + 'is' + 'Yanis');
+   console.log('My Name is : ' + 'Yanis');
+   console.log(`Total cost is : $${3+8}`);
+   alert(`The total cost is : $${(599 + 295)/100}\nThank You Come again !`);
+  */
+
+  console.log(`Items ${2 + 1 + 1} : $${(2*2095 + 2*799)/100}`);
+  console.log(`Shipping and handeling : $${(2*499)/100}`);
+  console.log(`Taxes : $${((2*2095 + 2*799 + 2*499)/100)*0.1}`);
+  console.log(`Total cost : $${(2*2095 + 2*799 + 2*499)/100 + ((2*2095 + 2*799 + 2*499)/100)*0.1}`);
+    </script>
+</body>
+</html>
