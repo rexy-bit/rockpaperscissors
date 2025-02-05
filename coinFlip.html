@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    
+    <p>Coin Flip Game</p>
+
+    <button onclick="
+      flipCoin('Heads');
+    ">
+        Heads
+    </button>
+
+    <button onclick="
+       flipCoin('Tails');
+    ">
+        Tails
+    </button>
+
+    <button onclick="
+      score.Losses = 0;
+      score.Wins = 0;
+      localStorage.setItem('score', JSON.stringify(score));
+
+      alert(`The score has been reset : Wins : ${score.Wins}, Losses : ${score.Losses}`);
+    ">
+        Reset Score
+    </button>
+
+    <button onclick="
+      alert(`Wins : ${score.Wins}, Losses : ${score.Losses}`);
+    ">
+        Show Score
+    </button>
+    
+    <script src="coinFlip.js">
+
+
+    </script>
+
+</body>
+</html>
