@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html>
+<title>ROCK1.com</title>
+<link rel="stylesheet" href="rock1.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<head>
+  <style>
+    
+  </style>
+
+
+</head>
+
+<div>
+
+  <p class="title">
+    Rock Paper Scissors
+  </p>
+
+  <button class="play-button" onclick="
+    playGame('rock');
+  "  class="buttons">
+    <img src="emojis/rock-emoji.png" class="emoji">
+  </button>
+
+  <button class="play-button" onclick="
+    playGame('paper');
+  " class="buttons">
+    <img src="emojis/paper-emoji.png" class="emoji">
+  </button>
+
+  <button class="play-button" onclick="
+    playGame('scissors');
+  "  class="buttons">
+    <img src="emojis/scissors-emoji.png" class="emoji">
+  </button>
+
+
+  <p class="result" >
+
+  </p>
+
+  <p class="score">
+
+  </p>
+
+  <button class="update-score" onclick="
+  displayScore();
+" >
+  Show Score
+</button>
+
+<button class="update-score" onclick="
+  updateScore();
+  displayScore();
+">
+  Update Score
+</button>
+
+</div>
+
+<body>
+  
+  <script src="rock1.js">
+
+
+  </script>
+</body>
+</html>
