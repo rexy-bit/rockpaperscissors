@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<title>
+    DOMProjects.com
+</title>
+<head>
+  <style>
+    body{
+        font-family : Poppins, arial;
+    }
+    .js-button{
+        background-color: black;
+
+        border : none;
+        color : white;
+        padding : 10px 15px;
+        font-size : 0.9em;
+        border : none;
+        border-radius : 50px;
+        cursor : pointer;
+        margin-top : 5px;
+        font-weight: 600;
+
+    }
+    .is-subscribed{
+        background-color : lightgray;
+        color : black;
+        font-weight: 600;
+
+    }
+
+    div{
+        margin-top : 60px;
+        line-height : 20px;
+    }
+    .title{
+        font-size : 20px;
+        font-weight : 500;
+        color : black;
+    }
+    
+    .side-bar{
+        width : 350px;
+        height : 40px;
+        border : solid 1px gray;
+        font-size : 20px;
+        padding : 10px;
+    }
+
+    .calculate-button{
+        background-color : green;
+        color : white;
+        font-size : 16px;
+        height : 59px;
+        width:110px;
+        border : none;
+        cursor : pointer;
+        font-weight : 600;
+
+    }
+    .calculate-button:hover{
+        opacity : 0.7;
+    }
+    .calculate-button:active{
+        opacity : 0.5;
+    }
+    .total-cost{
+        color : black;
+        font-size : 20px;
+        font-weight : 600;
+        margin-top:20px;
+    }
+  </style>
+</head>
+<p >
+    Youtube Subscribe Button
+</p>
+
+<button class="js-button" onclick="
+   getButton();
+">
+    Subscribe
+</button>
+<div>
+<p class="title"> 
+    Amazon Shipping Calculator
+</p>
+
+<p class="title">
+
+    Orders under $40 = + $10 shipping
+</p>
+<p class="title">
+    Orders upper 40$ = Free shipping
+</p>
+
+</div>
+<p>
+    <input type="text" placeholder="cost of order" class="side-bar" onkeydown="
+        console.log(event.key);
+        if(event.key === 'Enter'){
+            calculateCost();
+        }
+        ">
+    <button onclick="
+      calculateCost();
+    "  class="calculate-button">
+        Calculate
+    </button>
+</p>
+
+<p class="total-cost" class="display-cost"></p>
+
+
+
+<body>
+    
+    <script>
+
+function getButton(){
+    const buttonElement = document.querySelector('.js-button');
+
+if(buttonElement.innerText === 'Subscribe'){
+    buttonElement.innerText = 'Subscribed';
+    buttonElement.classList.add('is-subscribed');
+}else if(buttonElement.innerText === 'Subscribed'){
+    buttonElement.innerText = 'Subscribe';
+    buttonElement.classList.remove('is-subscribed');
+}
+}
+
+ function calculateCost(){
+
+    const costElement = document.querySelector('.side-bar');
+    let cost = Number(costElement.value)*100;
+    
+
+    if(cost < 4000){
+        cost = cost + 1000;
+        
+    }else{
+        cost = cost;
+    }
+
+    document.querySelector('.total-cost').innerHTML = `The total cost is : $${cost/100}`;
+ }
+      
+
+
+    </script>
+</body>
+</html>
