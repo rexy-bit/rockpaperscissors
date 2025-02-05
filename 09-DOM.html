@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+<title>DOM</title>
+<head>
+
+</head>
+
+<body>
+    
+  <input type="text" placeholder="Type some text" class="side-bar" onkeyup="
+      display();
+    ">
+  <p class="text"></p>
+    <script>
+
+       function display(){
+
+        const inputElement = document.querySelector('.side-bar');
+        const textElement = inputElement.value;
+
+        document.querySelector('.text').innerHTML = `${textElement}`;
+       }
+
+        /*
+   document.body.innerHTML = 'hello';
+   document.title = 'Good Job !';
+   document.body.innerHTML = 'Changed';
+   document.body.innerHTML = '<button> Nice </button>';
+        
+
+        document.querySelector('button').innerHTML = 'Yanis';
+        document.querySelector('.Second').innerHTML = 'Changed';
+
+        console.log(document.querySelector('.Second'));
+
+        const buttonElement = document.querySelector('.Second');
+        buttonElement.innerHTML = 'Button changed';
+
+       
+  
+
+        let buttonElement = document.querySelector('.js-button');
+
+        console.log(buttonElement);
+        
+        document.querySelector('.button2').innerText = '9b done !';
+
+         
+
+           function display(choice){
+              document.querySelector('.display-move').innerHTML = `You chose ${choice} !`;
+           }
+
+           
+
+           function displayName(){
+            let name = document.querySelector('.input-bar');
+            let realName = name.value;
+
+            document.querySelector('.display-name').innerHTML = `Your name is ${realName}.`;
+            
+           }
+            */
+    </script>
+</body>
+</html>
