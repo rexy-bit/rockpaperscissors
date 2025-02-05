@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+  <title>
+     rock2.com    
+</title>
+<head>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p>Rock Paper Scissors Game</p>
+
+    <p>
+        <button onclick="
+          playGame('rock');
+            
+            ">
+            Rock
+        </button>
+
+        <button onclick="
+        playGame('paper')
+        ">
+            Paper
+        </button>
+
+        <button onclick="
+         playGame('scissors');
+        ">
+            Scissors
+        </button>
+
+        <button onclick="
+          score.Wins = 0;
+          score.Losses = 0;
+          score.Ties = 0;
+          localStorage.removeItem('score');
+
+          updateScore();
+        ">
+            Reset Score
+        </button>
+
+        <button onclick="
+           updateScore();
+        ">
+            Show Score
+        </button>
+    </p>
+
+    <p class="display-result"> </p>
+    <p class="display-moves"></p>
+    <p class="display-score"></p>
+    <script src="rock2.js">
+        
+    </script>
+</body>
+</html>
