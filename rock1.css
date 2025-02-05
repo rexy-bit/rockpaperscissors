@@ -1,0 +1,56 @@
+
+body{
+    background-color : black;
+    font-family : roboto, arial;
+    color : white;
+}
+
+.title{
+    
+    font-size : 2em;
+    font-weight : 700;
+    
+
+}
+
+.emoji{
+    height : 50px;
+}
+
+.play-button{
+    background-color : transparent;
+    border : solid 2px white;
+    padding : 30px;
+    border-radius : 100px;
+    cursor : pointer;
+    margin-right: 20px;
+}
+.play-button:hover{
+    opacity : 0.7;
+}
+.play-button:active{
+    opacity : 0.5;
+}
+
+.result,.score{
+    font-size : 1.5em;
+    margin-top : 50px;
+    font-weight : 600;
+}
+
+.update-button,.update-score{
+    color : black;
+    padding : 15px 25px;
+    border : none;
+    margin-right : 15px;
+    cursor : pointer;
+    font-size : 1.1em;
+    font-weight : 600;
+    border-radius : 5px;
+}
+.update-button:hover,.update-score:hover{
+    opacity: 0.7;
+}
+.update-button:active,.update-score:active{
+    opacity: 0.5;
+}
