@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<title>
+  Coin Flip 2.com
+</title>
+
+<head>
+
+
+</head>
+
+<body>
+    
+    <p>
+        Coin Flip Game
+    </p>
+
+    <button onclick="
+      playGame('Heads');
+    ">
+        Heads
+    </button>
+
+    <button onclick="
+     playGame('Heads');
+    ">
+        Tails
+    </button>
+
+    <button onclick="
+      alert(`Wins : ${score.Wins}, Losses : ${score.Losses}`);
+    ">
+        Show Score
+    </button>
+
+    <button onclick="
+       score.Wins = 0;
+       score.Losses = 0;
+       localStorage.setItem('score', JSON.stringify(score));
+       alert(`Score has been reset`);
+
+    ">
+        Reset score
+    </button>
+
+    <script src="coinFlip2.js">
+
+
+    </script>
+</body>
+</html>
