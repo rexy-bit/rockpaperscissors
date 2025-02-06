@@ -1,67 +1,129 @@
 <!DOCTYPE html>
 
 <html>
-<title>DOM</title>
-<head>
 
-</head>
+<header>
+
+   <style>
+    body{
+      font-family : arial;
+
+    }
+
+      .title{
+        font-size : 1.3em;
+        color : black;
+      }
+
+      .js-subscribe{
+        background-color : black;
+        color : white;
+        padding : 10px 15px;
+        font-size : 1em;
+        font-weight : bold;
+        border : none;
+        border-radius : 50px;
+        cursor : pointer;
+      }
+      .is-subscribed{
+        background-color : lightgray;
+        color : black;
+        padding : 10px 15px;
+        font-size : 1em;
+        font-weight : bold;
+        border : none;
+        border-radius : 50px;
+        cursor : pointer;
+      }
+
+      .display-error-message{
+        color : red;
+      }
+   </style>
+
+</header>
 
 <body>
-    
-  <input type="text" placeholder="Type some text" class="side-bar" onkeyup="
-      display();
-    ">
-  <p class="text"></p>
-    <script>
 
-       function display(){
+  <p class="title">Youtube Subscribe Button</p>
 
-        const inputElement = document.querySelector('.side-bar');
-        const textElement = inputElement.value;
+  <button class="js-subscribe" onclick="
+    subscribe();
+  ">
+    Subscribe
+  </button>
 
-        document.querySelector('.text').innerHTML = `${textElement}`;
-       }
+  <p class="title2">
+    Amazon Shipping Calculator
+  </p>
 
-        /*
-   document.body.innerHTML = 'hello';
-   document.title = 'Good Job !';
-   document.body.innerHTML = 'Changed';
-   document.body.innerHTML = '<button> Nice </button>';
-        
+  <p class="title2">
+     
+    Orders under $40 = + $10 Shipping
+  </p>
 
-        document.querySelector('button').innerHTML = 'Yanis';
-        document.querySelector('.Second').innerHTML = 'Changed';
+  <p class="title2">
+    Orders upper $40 = Free Shipping
+  </p>
 
-        console.log(document.querySelector('.Second'));
+  <input type="text" placeholder="Enter price" class="input-bar" onkeydown="
+    if(event.key === 'Enter'){
+      calculate();
+    }
+  ">
 
-        const buttonElement = document.querySelector('.Second');
-        buttonElement.innerHTML = 'Button changed';
+  <button class="calculate-cost"> 
+    Calculate
+  </button>
 
-       
+  <p class="display-cost" onclick="
+    calculate();
+  ">
+
+  </p>
+
+  <p class="display-error-message"></p>
   
 
-        let buttonElement = document.querySelector('.js-button');
+  <script>
 
-        console.log(buttonElement);
-        
-        document.querySelector('.button2').innerText = '9b done !';
+   function subscribe(){
 
-         
+    let subscribeElement = document.querySelector('.js-subscribe');
 
-           function display(choice){
-              document.querySelector('.display-move').innerHTML = `You chose ${choice} !`;
-           }
+      if(subscribeElement.classList.contains('is-subscribed')){
+        subscribeElement.classList.remove('is-subscribed');
+        subscribeElement.innerHTML = 'subscribe';
+      }else{
+        subscribeElement.classList.add('is-subscribed');
+        subscribeElement.innerHTML = 'subscribed'
 
-           
+      }
 
-           function displayName(){
-            let name = document.querySelector('.input-bar');
-            let realName = name.value;
+   }
 
-            document.querySelector('.display-name').innerHTML = `Your name is ${realName}.`;
-            
-           }
-            */
-    </script>
+   function calculate(){
+
+    let inputElement = document.querySelector('.input-bar');
+    let cost = Number(inputElement.value)*100;
+
+    if(cost < 0){
+      document.querySelector('.display-error-message').innerHTML = `Error : cost can not be less than $0`;
+
+      return;
+    }
+
+    if(cost < 4000){
+      cost = cost + 1000;
+    }else{
+      cost = cost;
+    }
+
+    document.querySelector('.display-cost').innerHTML = `The total cost is : $${cost/100}`;
+
+   }
+
+
+  </script>
 </body>
 </html>
