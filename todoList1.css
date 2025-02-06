@@ -1,0 +1,30 @@
+body{
+    background-color : #c3e0e5;
+    font-family: roboto, arial;
+    display: flex;
+    flex-direction : row;
+    justify-content : center;
+    align-items : center;
+
+    
+}
+
+.main{
+
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items : center;
+
+}
+
+.title{
+    display : flex;
+    flex-direction : row;
+    justify-content : center;
+    align-items : center;
+    font-size : 3em;
+    font-weight : 800;
+    text-decoration : underline;
+    color : #274472;
+}
