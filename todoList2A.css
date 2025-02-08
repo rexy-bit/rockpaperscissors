@@ -1,0 +1,72 @@
+body{
+    font-family : arial;
+    display : flex;
+   justify-content: center;
+    background-color : lightskyblue;
+
+}
+
+.main-div{
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+
+}
+.title{
+    display : flex;
+    flex-direction : row;
+    justify-content : center;
+    font-size : 2.5em;
+    font-weight : 900;
+    color : darkblue;
+    text-decoration : underline;
+
+}
+.displays ,.todos{
+    display : grid;
+    grid-template-columns: 350px 250px 100px;
+    column-gap: 20px;
+    padding : 10px;
+    
+}
+.todos{
+    align-items : center;
+    font-size : 1.1em;
+    color : black;
+    font-weight: bold;
+    
+}
+.input-todo,
+.input-date,.add-button,.delete-button{
+    
+    border : 1px solid lightgray;
+    border-radius: 5px;
+    font-size : 1em;
+    padding : 15px;
+}
+.add-button{
+    cursor : pointer;
+    background-color : green;
+    color : white;
+    font-weight : bold;
+    transition : opacity 0.25s;
+
+
+}
+.delete-button{
+    cursor : pointer;
+    background-color : red;
+    color : white;
+    font-weight : bold;
+    transition : opacity 0.25s;
+ 
+}
+
+.add-button:hover,
+.delete-button:hover{
+    opacity: 0.8;
+}
+.add-button:active,
+.delete-button:active{
+    opacity: 0.8;
+}
