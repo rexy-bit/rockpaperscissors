@@ -1,0 +1,77 @@
+body{
+    background-color : #DCD7C9;
+    font-family : poppins, arial;
+    display : flex;
+    justify-content : center;
+
+}
+
+.container {
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    
+
+}
+
+.title{
+    display : flex;
+    flex-direction: row;;
+    justify-content: center;
+    font-size : 3em;
+    font-weight: 900;
+    text-decoration: underline;
+    color : #A27B5C;
+}
+
+.todoInputs{
+    display : grid;
+    grid-template-columns: 350px 250px 100px;
+    column-gap : 20px;
+    padding : 10px;
+}
+
+.input-bar,
+.input-date{
+    padding : 15px;
+    border : 1px solid lightgray;
+    border-radius : 3px;
+    font-size : 1em;
+
+}
+
+.add-todo{
+    background-color: #A27B5C;
+    color : white;
+    font-size : 1.1em;
+    font-weight : bold;
+    border : 1px solid lightgray;
+    border-radius : 3px;
+    cursor : pointer;
+}
+
+.delete-button{
+    background-color : red;
+    color : white;
+    font-size : 1.1em;
+    font-weight : bold;
+    border : 1px solid lightgray;
+    border-radius: 3px;
+     padding : 13px;
+     cursor : pointer;
+}
+
+
+
+.displays2{
+    display : grid;
+    grid-template-columns : 350px 250px 100px;
+    gap : 20px;
+    padding : 15px;
+}
+
+.name,.date{
+    font-size : 1.1em;
+    font-weight : bold;
+    color : black;
+}
