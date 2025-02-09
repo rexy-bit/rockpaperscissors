@@ -110,3 +110,5 @@ function resetScore(){
      saveScore();
      displayScore();
 }
+
+
