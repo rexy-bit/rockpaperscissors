@@ -1,86 +1,36 @@
-<!DOCTYPE html>
-
-<html>
-
-<title>ROCK advanced</title>
-
-<link rel="stylesheet" href="rockAdvenced.css">
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
+<html lang="en">
 <head>
-
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rock.com</title>
+    <link rel="stylesheet" href="rockAdvanced.css">
 </head>
-
 <body>
-
-    <div class="main-div">
-
-    <div class="title">
-        Rock Advanced
-    </div>
-
-    <div class="game-buttons">
-
     
-        <button onclick="
-        playGame('rock');
-        " class="play-button">
-            <img src="emojis/rock-emoji.png" class="emoji">
-        </button>
-    
-        <button onclick="
-         playGame('paper');
-        "  class="play-button">
-            <img src="emojis/paper-emoji.png" class="emoji">
-        </button>
-    
-        <button onclick="
-          playGame('scissors');
-        "    class="play-button">
-            <img src="emojis/scissors-emoji.png" class="emoji">
-        </button>
+      <div class="container">
+        <div class="title">Rock Paper Scissors</div>
 
-    </div>
+        <div class="buttons-game">
+            <button class="rock-button">rock</button>
+            <button class="paper-button">paper</button>
+            <button class="scissors-button">scissors</button>
+        </div>
 
-    <div class="displays">
+        <div class="displays">
+            <div class="display-result"></div>
+            <div class="display-moves"></div>
+            <div class="display-score"></div>
+        </div>
+
+        <div class="buttons2">
+            <button class="show-score">Show Score</button>
+            <button class="reset-score">Reset Score</button>
+            <button class="auto-play">Auto play</button>
+        </div>
+
+      </div>
 
 
-    <div class="display-result"></div>
-    <div class="display-moves"></div>
-    <div class="display-score"></div>
-
-</div>
-
-<div class="buttons">
-
-    <button class="show-score" onclick="
-       displayScore();
-    ">
-        Show score
-    </button>
-
-    <button class="reset-score" onclick="
-      resetScore();
-    ">
-        Reset score
-    </button>
-
-    <button class="auto-play-button" onclick="
-       autoPlay();
-    ">
-        Auto Play
-    </button>
-</div>
-    
-</div>
-
-    <script src="rockAdvanced.js">
-
-    </script>
+    <script src="rockAdvanced.js"></script>
 </body>
 </html>
