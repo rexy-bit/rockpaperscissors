@@ -1,159 +1,114 @@
 
-let score = JSON.parse(localStorage.getItem("score")) || {
+let score = JSON.parse(localStorage.getItem('score')) || {
     Wins : 0,
     Losses : 0,
     Ties : 0
 };
 
-
-const rock = document.querySelector('.rock-button');
-const paper = document.querySelector(".paper-button");
-const scissors = document.querySelector(".scissors-button");
-
-
-const scoreDisplay = document.querySelector(".show-score");
-const resetScore = document.querySelector(".reset-score");
-
-const playAuto = document.querySelector(".auto-play");
-
-
-rock.addEventListener("click", () =>{
-    playGame("rock");
-});
-
-paper.addEventListener("click", ()=>{
-    playGame("paper");
-});
-
-scissors.addEventListener("click", ()=>{
-    playGame("scissors");
-});
-
-resetScore.addEventListener("click", ()=>{
-    resettheScore();
-});
-
-scoreDisplay.addEventListener("click", ()=>{
-    displayScore();
-});
-
-
-
-
-let intervalId;
-let isAutoplaying = false;
-
-playAuto.addEventListener("click", ()=>{
-      playAutoGame();
-});
-
-function playAutoGame(){
-
-      if(!isAutoplaying){
-          intervalId = setInterval(()=>{
-            let playerMove = pickComputerMove();
-            isAutoplaying = true;
-            playGame(playerMove);
-                 }, 1000);
-      }else{
-          clearInterval(intervalId);
-          isAutoplaying = false;
-      }
-
-
-}
-
+displayScore();
 function pickComputerMove(){
-    let computerMove = "";
+
+    let computerMove = '';
     let randomNumber = Math.random();
 
-    if(randomNumber <= 1/3){
-        computerMove = "rock";
+    if(randomNumber <=1/3){
+        computerMove = 'rock';
     }else if(randomNumber > 1/3 && randomNumber <= 2/3){
-        computerMove = "paper";
-    }else{
-        computerMove = "scissors";
+        computerMove = 'paper';
+    }else if(randomNumber > 2/3){
+        computerMove = 'scissors';
     }
 
     return computerMove;
-
-
 }
-
 
 function playGame(playerMove){
 
-   let computerMove = pickComputerMove();
-   let result = "";
+    let computerMove = pickComputerMove();
+    let result = '';
 
-   if(playerMove === "rock"){
+    if(playerMove === 'rock'){
 
-    if(computerMove === "rock"){
-        result = "Tie";
-    }else if(computerMove === "paper"){
-        result = "Lose"
-    }else if(computerMove === "scissors"){
-        result = "Win";
+       if(computerMove === 'rock'){
+        result = 'Tie';
+       }else if(computerMove === 'paper'){
+        result = 'Lose';
+       }else if(computerMove === 'scissors'){
+        result = 'Win';
+       }
+
+    }else if(playerMove  === 'paper'){
+
+        if(computerMove === 'rock'){
+            result = 'Win';
+           }else if(computerMove === 'paper'){
+            result = 'Tie';
+           }else if(computerMove === 'scissors'){
+            result = 'Lose';
+           }
+
+    }else if(playerMove === 'scissors'){
+
+        if(computerMove === 'rock'){
+            result = 'Lose';
+           }else if(computerMove === 'paper'){
+            result = 'Win';
+           }else if(computerMove === 'scissors'){
+            result = 'Tie';
+           }
+
     }
 
-   }else if(playerMove === "paper"){
+    if(result === 'Win'){
+        score.Wins++;
+    }else if(result === 'Lose'){
+        score.Losses++;
+    }else if(result === 'Tie'){
+        score.Ties++;
 
-    if(computerMove === "rock"){
-        result = "Win";
-    }else if(computerMove === "paper"){
-        result = "Tie"
-    }else if(computerMove === "scissors"){
-        result = "Lose";
     }
-
-   }else if(playerMove === "scissors"){
-
-    if(computerMove === "rock"){
-        result = "Lose";
-    }else if(computerMove === "paper"){
-        result = "Win"
-    }else if(computerMove === "scissors"){
-        result = "Tie";
-    }
-
-   }
-
-   if(result === "Win"){
-    score.Wins++;
-   }else if(result === "Lose"){
-    score.Losses++;
-   }else if(result === "Tie"){
-    score.Ties++;
-   }
-
-
-   document.querySelector(".display-result").innerHTML = `${result}`;
-   document.querySelector(".display-moves").innerHTML = `You picked ${playerMove}, computer picked ${computerMove}`;
-
-   displayScore();
-   saveScore();
+    
+    document.querySelector('.display-result').innerHTML = `${result}`;
+    document.querySelector('.display-moves').innerHTML = `You picked  <img src="emojis/${playerMove}-emoji.png" class="emoji">, computer picked  <img src="emojis/${computerMove}-emoji.png" class="emoji">`;
+    displayScore();
+    saveScore();
 
 
 }
 
+let isAutoPlaying = false;
+let intervalId;
+function autoPlay(){
+
+    if(!isAutoPlaying){
+        intervalId = setInterval(function(){
+            const playerMove = pickComputerMove();
+             playGame(playerMove);
+        },1000); 
+        isAutoPlaying = true;
+    }else {
+        clearInterval(intervalId);
+        isAutoPlaying = false;
+        
+    }
+   
+}
 
 function displayScore(){
-
-    document.querySelector(".display-score").innerHTML = `Wins : ${score.Wins}, Losses : ${score.Losses}, Ties : ${score.Ties}`;
+    document.querySelector('.display-score').innerHTML = `Wins : ${score.Wins}, Losses : ${score.Losses}, Ties : ${score.Ties}`;
 
 }
 
 function saveScore(){
-    localStorage.setItem("score", JSON.stringify(score));
+    localStorage.setItem('score', JSON.stringify(score));
 }
 
-function resettheScore(){
-
-    score = {
-        Wins : 0,
-        Losses : 0,
-        Ties : 0
-    };
-    saveScore();
-    displayScore();
+function resetScore(){
+     score.Wins = 0;
+     score.Losses = 0;
+     score.Ties = 0;
+     saveScore();
+     displayScore();
 }
+
+
