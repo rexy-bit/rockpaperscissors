@@ -1,91 +1,104 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title> Shipping calculator mini-project</title>
 
+        <style>
+            body{
+                font-family:arial;
+            }
+              .title{
+                font-size:1.5em;
+                font-weight:bold;
+                color:green;
+              }
+
+              .orders{
+                font-size:1.2em;
+                color:black;
+                font-weight:600;
+              }
+              .free{
+                font-size:1.2em;
+                color:black;
+                font-weight:600;
+              }
+              .input-bar{
+                padding:15px;
+                border-radius:2px;
+                border:1px solid gray;
+                font-size:1em;
+
+
+              }
+              .js-button{
+                padding:15px;
+                font-size:1em;
+                font-weight:600;
+                color:white;
+                background-color:green;
+                border:none;
+                border-radius:2px;
+                cursor:pointer;
+              }
+              .js-button:hover{
+                opacity:0.7;
+              }
+              .js-button:active{
+                opacity:0.5;
+              }
+              .display-error-message{
+                color:red;
+                font-size:1.1em;
+                margin-top:20px;
+              }
+        </style>
     </head>
     <body>
-        <p>cartQuantity Project whithout CSS </p>
+        <p class="title">Shipping calculator mini-project</p>
 
-        <button onclick="
-        JSON.parse(localStorage.getItem('cartQuantity'));
-        
-          document.querySelector('.display-cart-quantity').innerHTML = `Cart quantity is : ${cartQuantity}`;
-        
-        ">
-            Show Quantity
-        </button>
+        <p class="orders">Orders Under &#36;40  = +&#36;10 shipping</p>
+        <p class="free">Orders over &#36;40 FREE shipping</p>
 
-        <button onclick="
-           addToCart(1);
-        ">
-         Add to cart
-        </button>
-
-        <button onclick="
-         addToCart(2);
-
-        ">
-            +2
-        </button>
-
-        <button onclick="
-      addToCart(3);
-        
-        ">
-            +3
-        </button>
-
-        <button onclick="
-         addToCart(4);
-        
-        ">
-            +4
-        </button>
-
-        <button onclick="
-         addToCart(5);
-        
-        ">
-            +5
-        </button>
-
-        <button onclick="
-
-         removeFromCart(-1);
+        <input type="text" placeholder="Cost of order" class="input-bar" onclick="
+           calculateTotalCost();
         ">
 
-        remove from cart
-            
-        </button>
-
-        <button onclick="
-           removeFromCart(-2);
-        
+        <button class="js-button" onclick="
+           calculateTotalCost();
+           
         ">
-            -2
+            Calculate
         </button>
 
-        <button onclick="
-          removeFromCart(-3);
-        
-        ">
-            -3
-        </button>
+        <p class="display-total-cost">
 
-        <button onclick="
-          cartQuantity = 0;
-          document.querySelector('.display-cart-quantity').innerHTML = `Cart quantity is : ${cartQuantity}`;
-          localStorage.setItem('cartQuantity', JSON.stringify(cartQuantity));
-        
-        ">
-            reset cart
-        </button>
-
-        <p class="display-cart-quantity"></p>
+        </p>
         <p class="display-error-message"></p>
 
 
-        <script src="cartQuantity.js">
+        <script>
+             function calculateTotalCost(){
+                const inputElement = document.querySelector('.input-bar');
+
+                let cost = Number(inputElement.value)*100;
+
+                 if(cost < 0){
+                    document.querySelector('.display-error-message').innerHTML = 'Error: cost can not be less than $0';
+
+                    return;
+                }
+
+                if(cost < 4000){
+                    cost = cost + 1000;
+                }else if(cost >= 4000){
+                    cost = cost;
+                }
+
+                document.querySelector('.display-total-cost').innerHTML = `Total cost is $${cost/100}`;
+             }
+
+           
 
 
         </script>
