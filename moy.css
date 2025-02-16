@@ -1,0 +1,140 @@
+body{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    height : 100%;
+    width : 100%;
+    font-family : roboto, arial;
+    margin : 0;
+    padding : 0;
+    background-color : #EFE3C2;
+}
+h1{
+    display: flex;
+    flex-direction : row;
+    justify-content : center;
+    font-size : 2em;
+    color : #3E7B27;
+    font-weight : bold;
+
+}
+.container{
+    display : flex;
+    flex-direction : column;
+    justify-content : center;
+    align-items : center;
+    width : 100%;
+    height : 100%;
+}
+
+.container2{
+    display : flex;
+    flex-direction : row;
+    justify-content : center;
+    align-items : center;
+    align-items :first baseline;
+
+     
+}
+
+.section-td,
+.section-examen{
+    display : flex;
+    flex-direction : column;
+    width : 500px;
+
+
+}
+
+h2{
+    display : flex;
+    flex-direction : row;
+    justify-content : center;
+    font-size : 1.5em;
+    color : #123524;
+    font-weight : bold;
+}
+
+.notes-td,
+.notes-examens{
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    gap : 15px;
+}
+
+.note-div{
+    display : flex;
+    flex-direction : row;
+    gap : 20px;
+    font-size : 1.1em;
+    align-items : center;
+}
+.note{
+    font-weight : 600;
+    color : #3E7B27;
+}
+
+.input-bar{
+    width : 70px;
+    display : flex;
+    flex-direction : row;
+    justify-content : center;
+    padding : 10px;
+    height : 35px;
+    border : none;
+    background-color : #85A947;
+    color : #123524;
+    font-size : 1.1em;
+    font-weight : bold;
+    border-radius : 5px;
+}
+
+.moyenne{
+    width : 100%;
+    bottom : 0;
+    height : 60px;
+    background-color : white;
+    margin-top : 80px;
+    display : flex;
+    flex-direction : row;
+    gap : 30px;
+    justify-content : center;
+    align-items : center;
+}
+.display-moy{
+    width : 70px;
+    height : 45px;
+    font-size : 1.1em;
+    background-color : #85A947;
+    color : black;
+    font-weight : bold;
+    border : none;
+    border-radius : 5px;
+
+}
+
+
+.the-button{
+    display : flex;
+    flex-direction : row;
+    justify-content: center;
+    margin-top : 50px;
+ 
+}
+
+.calcul-moy{
+    padding : 20px;
+    font-size : 1.1em;
+    font-weight : bold;
+    background-color: green;
+    color : white;
+    border : 1px solid lightgray;
+}
+.calcul-moy:hover{
+    opacity: 0.8;
+}
+
+.calcul-moy:active{
+    opacity: 0.6;
+}
